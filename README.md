@@ -27,7 +27,7 @@ public class Item : ScriptableObject
 
 ### 아이템 레시피 :: CSV
 
-## 인벤토리 아이템 추가
+## ::인벤토리 아이템 추가
 ## 슬롯 클릭 처리
 
 
