@@ -10,7 +10,10 @@
 
 ### 데이터 베이스
 ---
-#### 1. 아이템
+#### 아이템
+ScriptableObject로 데이터 저장
+
+ScriptableObject 생성을 위한 클래스, 어트리뷰트
 ```
 [CreateAssetMenu(fileName = "New Item", menuName = "New Item/Item")]
 public class Item : ScriptableObject
@@ -18,12 +21,12 @@ public class Item : ScriptableObject
     public string item_name;                      // 아이템 이름
     public EItemType item_type;                   // 아이템 타입 (장비, 소비)
     public Sprite item_sprite;                    // 아이템 스프라이트
-    public bool is_stackable;                     // 아이템을 쌓을 수 있는지 체크
-    public bool is_material;                      // 재료 아이템인지 체크
+    public bool is_stackable;                     // 아이템을 쌓을 수 있는가?
+    public bool is_material;                      // 재료 아이템인가?
 }
 ```
 
-#### 2. 아이템 레시피
+#### 아이템 레시피
 
 ### 인벤토리 아이템 추가
 ---
