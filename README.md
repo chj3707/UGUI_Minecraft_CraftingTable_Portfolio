@@ -25,8 +25,7 @@ public class Item : ScriptableObject
 ```
 <img src="/Image/ScriptableObject.PNG" height="60%" width="80%">
 
-
-### 아이템 레시피
+### 아이템 레시피 :: CSV
 
 ## 인벤토리 아이템 추가
 ## 슬롯 클릭 처리
