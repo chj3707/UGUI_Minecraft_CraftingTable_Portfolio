@@ -23,7 +23,7 @@ public class Item : ScriptableObject
     public bool is_material;                      // 재료 아이템인가?
 }
 ```
-<img src="/Image/ScriptableObject.PNG" height="40%" width="50%">
+<center><img src="/Image/ScriptableObject.PNG" height="40%" width="50%"></center>
 
 
 ### 아이템 레시피
