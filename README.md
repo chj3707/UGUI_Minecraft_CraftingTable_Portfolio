@@ -9,8 +9,7 @@
 + [제작대 아이템 조합](#제작대-아이템-조합)
 
 ## 데이터 베이스
-### 아이템
-#### ScriptableObject로 데이터 저장
+### 아이템 :: ScriptableObject
 
 ScriptableObject 생성을 위한 클래스, 어트리뷰트
 ```
@@ -47,5 +46,4 @@ public class Item : ScriptableObject
 
 
 
-### 제작대 아이템 조합
----
+## 제작대 아이템 조합
