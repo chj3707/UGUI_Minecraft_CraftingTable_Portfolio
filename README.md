@@ -51,7 +51,7 @@ public class ItemRecipe
 
 Recipe.csv
 
-<img src="/Image/RecipeCSV.png" height="60%" width="80%">
+<img src="/Image/RecipeCSV.png" height="60%" width="100%">
 
 ## 인벤토리 아이템 추가
 ## 슬롯 클릭 처리
