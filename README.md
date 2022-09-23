@@ -90,12 +90,12 @@ public class ItemDataBase : Singleton_Mono<ItemDataBase>
 
         for (int i = 0; i < recipe_count; i++)
         {
-            ItemRecipe temp_item_recipe = new ItemRecipe();
+            ItemRecipe curr_item_recipe = new ItemRecipe();  // 현재 아이템 레시피
             string item_name = "";                           // 조합 아이템 이름
 
             /* object 형식 데이터 언박싱 */
             item_name = csv_data[i]["조합 아이템"] as string;
-            temp_item_recipe.CreateQuantity = int.Parse(csv_data[i]["생성 개수"].ToString());
+            curr_item_recipe.CreateQuantity = int.Parse(csv_data[i]["생성 개수"].ToString());
 
             /* 조합법 :: CSV파일 작성 할 때 0,0 ~ 2,2 형식으로 구성  */
             for (int j = 0; j < 3; j++)
@@ -108,12 +108,12 @@ public class ItemDataBase : Singleton_Mono<ItemDataBase>
                      * 3. 비었으면 ? 0 : 1  재료 개수 카운트
                      */
                     string material_item_name = csv_data[i][$"\"{j},{k}\""] as string;
-                    temp_item_recipe.Recipe[j, k] = string.IsNullOrEmpty(material_item_name) ? string.Empty : material_item_name;
-                    temp_item_recipe.MaterialQuantity += string.IsNullOrEmpty(material_item_name) ? 0 : 1;                  
+                    curr_item_recipe.Recipe[j, k] = string.IsNullOrEmpty(material_item_name) ? string.Empty : material_item_name;
+                    curr_item_recipe.MaterialQuantity += string.IsNullOrEmpty(material_item_name) ? 0 : 1;                  
                 }
             }
 
-            item_recipe_database[temp_item_recipe.MaterialQuantity].Add(item_name, temp_item_recipe);
+            item_recipe_database[curr_item_recipe.MaterialQuantity].Add(item_name, curr_item_recipe);
         }
     }
 }
