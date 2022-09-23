@@ -11,7 +11,7 @@
 ## 데이터 베이스
 ### 아이템 :: ScriptableObject
 
-ScriptableObject 생성을 위한 클래스
+**ScriptableObject 생성을 위한 클래스**
 
 ```c#
 [CreateAssetMenu(fileName = "New Item", menuName = "New Item/Item")]
@@ -29,7 +29,7 @@ public class Item : ScriptableObject
 
 ### 아이템 레시피 :: CSV
 
-CSVReader 오픈 소스 사용
+**CSVReader 오픈 소스 사용**
 
 ```c#
 public class ItemRecipe
@@ -49,7 +49,7 @@ public class ItemRecipe
 }
 ```
 
-Recipe.csv
+**Recipe.csv**
 
 <img src="/Image/RecipeCSV.png" height="60%" width="100%">
 
