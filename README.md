@@ -30,7 +30,7 @@ public class Item : ScriptableObject
 
 CSVReader 오픈 소스 사용
 
-```
+```c#
 public class ItemRecipe
 {
     private string[,] recipe;       // 아이템 레시피
