@@ -13,8 +13,6 @@
 
 ScriptableObject 생성을 위한 클래스
 
-<img src="/Image/ItemClass.png" height="50%" width="80%">
-
 ```c#
 [CreateAssetMenu(fileName = "New Item", menuName = "New Item/Item")]
 public class Item : ScriptableObject
@@ -31,8 +29,6 @@ public class Item : ScriptableObject
 ### 아이템 레시피 :: CSV
 
 CSVReader 오픈 소스 사용
-
-<img src="/Image/ItemRecipeClass.png" height="50%" width="80%">
 
 ```
 public class ItemRecipe
