@@ -49,7 +49,7 @@ public class ItemRecipe
 }
 ```
 
-+ _**Recipe.csv**_
+_**Recipe.csv**_
 
 <img src="/Image/RecipeCSV.png" height="60%" width="100%">
 
