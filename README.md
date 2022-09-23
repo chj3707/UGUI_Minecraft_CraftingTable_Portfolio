@@ -25,7 +25,7 @@ public class Item : ScriptableObject
 }
 ```
 
-<img src="/Image/ScriptableObject.PNG" height="60%" width="80%">
+<img src="/Image/ScriptableObject.PNG" height="60%" width="100%">
 
 + ### 아이템 레시피 :: CSV
 
