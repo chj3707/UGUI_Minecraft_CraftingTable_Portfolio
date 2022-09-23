@@ -63,6 +63,7 @@ public class ItemDataBase : Singleton_Mono<ItemDataBase>
     public List<Dictionary<string, ItemRecipe>> item_recipe_database = null;   // 아이템 레시피
     
     // ... Awake :: Initialize, Set info
+    
     // ... Initialize :: database 동적 할당
 
     // 아이템 레시피 정보 
