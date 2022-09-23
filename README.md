@@ -66,7 +66,7 @@ public class ItemDataBase : Singleton_Mono<ItemDataBase>
     
     // ... Initialize :: database 동적 할당
 
-    // 아이템 레시피 정보 
+    // 아이템 레시피 정보 가져가기
     public Dictionary<string, ItemRecipe> get_item_recipe_data(int material_quantity)
     {
         return item_recipe_database[material_quantity];
