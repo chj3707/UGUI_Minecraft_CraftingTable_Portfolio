@@ -18,7 +18,7 @@
 public class Item : ScriptableObject
 {
     public string item_name;                      // 아이템 이름
-    public EItemType item_type;                   // 아이템 타입 (장비, 소비)
+    public EItemType item_type;                   // 아이템 타입
     public Sprite item_sprite;                    // 아이템 스프라이트
     public bool is_stackable;                     // 아이템을 쌓을 수 있는가?
     public bool is_material;                      // 재료 아이템인가?
