@@ -93,20 +93,13 @@ public class ItemDataBase : Singleton_Mono<ItemDataBase>
             ItemRecipe curr_item_recipe = new ItemRecipe();  // 현재 아이템 레시피
             string item_name = "";                           // 조합 아이템 이름
 
-            /* object 형식 데이터 언박싱 */
             item_name = csv_data[i]["조합 아이템"] as string;
             curr_item_recipe.CreateQuantity = int.Parse(csv_data[i]["생성 개수"].ToString());
 
-            /* 조합법 :: CSV파일 작성 할 때 0,0 ~ 2,2 형식으로 구성  */
             for (int j = 0; j < 3; j++)
             {
                 for (int k = 0; k < 3; k++)
                 {
-                    /*
-                     * 1. j,k 위치의 데이터 읽기 (CSV 파일 데이터)
-                     * 2. 비었으면 ? 빈 문자열 : 재료 아이템 이름
-                     * 3. 비었으면 ? 0 : 1  재료 개수 카운트
-                     */
                     string material_item_name = csv_data[i][$"\"{j},{k}\""] as string;
                     curr_item_recipe.Recipe[j, k] = string.IsNullOrEmpty(material_item_name) ? string.Empty : material_item_name;
                     curr_item_recipe.MaterialQuantity += string.IsNullOrEmpty(material_item_name) ? 0 : 1;                  
