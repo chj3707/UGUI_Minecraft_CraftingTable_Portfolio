@@ -29,7 +29,7 @@ public class Item : ScriptableObject
 
 ### 아이템 레시피 :: CSV
 
-CSVReader 오픈 소스 사용
+*CSVReader 오픈 소스 사용
 
 ```c#
 public class ItemRecipe
