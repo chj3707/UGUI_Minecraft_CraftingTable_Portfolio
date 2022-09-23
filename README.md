@@ -12,6 +12,7 @@
 ### 아이템 :: ScriptableObject
 
 ScriptableObject 생성을 위한 클래스
+
 <img src="/Image/ItemClass.png" height="100%" width="100%">
 ```
 [CreateAssetMenu(fileName = "New Item", menuName = "New Item/Item")]
