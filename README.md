@@ -9,9 +9,9 @@
 + [제작대 아이템 조합](#제작대-아이템-조합)
 
 ## 데이터 베이스
-* ### 아이템 :: ScriptableObject
++ ### 아이템 :: ScriptableObject
 
-*__ScriptableObject__ 생성을 위한 클래스*
+    + *__ScriptableObject__ 생성을 위한 클래스*   
 
 ```c#
 [CreateAssetMenu(fileName = "New Item", menuName = "New Item/Item")]
