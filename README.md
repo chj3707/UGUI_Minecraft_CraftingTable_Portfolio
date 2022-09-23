@@ -27,6 +27,25 @@ public class Item : ScriptableObject
 
 ### 아이템 레시피 :: CSV
 
+CSVReader 오픈 소스 사용
+```
+public class ItemRecipe
+{
+    private string[,] recipe;       // 아이템 레시피
+    private int create_quantity;    // 아이템 생성 개수
+    private int material_quantity;  // 필요한 총 재료 개수
+
+    public ItemRecipe()
+    {
+        recipe = new string[3, 3];
+        create_quantity = 0;
+        material_quantity = 0;
+    }
+    
+    // ...프로퍼티
+}
+```
+
 ## 인벤토리 아이템 추가
 ## 슬롯 클릭 처리
 
