@@ -29,7 +29,7 @@ public class Item : ScriptableObject
 
 ### 아이템 레시피 :: CSV
 
-*CSVReader 오픈 소스 사용
+CSVReader 오픈 소스 사용
 
 ```c#
 public class ItemRecipe
@@ -49,6 +49,9 @@ public class ItemRecipe
 }
 ```
 
+CSV 구성 표
+
+조합 아이템:생성 개수:0,0:0,1:0,2:1,0:1,1:1,2:2,0:2,1:2,2
 <img src="/Image/RecipeCSV.png" height="60%" width="80%">
 
 ## 인벤토리 아이템 추가
