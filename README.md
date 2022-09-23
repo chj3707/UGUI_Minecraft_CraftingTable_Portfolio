@@ -27,9 +27,9 @@ public class Item : ScriptableObject
 
 <img src="/Image/ScriptableObject.PNG" height="60%" width="80%">
 
-### 아이템 레시피 :: CSV
++ ### 아이템 레시피 :: CSV
 
-_CSVReader 오픈 소스 사용_
+    + _CSVReader 오픈 소스 사용_
 
 ```c#
 public class ItemRecipe
@@ -49,11 +49,11 @@ public class ItemRecipe
 }
 ```
 
-_**Recipe.csv**_
+    + _**Recipe.csv**_
 
 <img src="/Image/RecipeCSV.png" height="60%" width="100%">
 
-### ItemDataBase : Singleton_Mono<ItemDataBase>
++ ### ItemDataBase : Singleton_Mono<ItemDataBase>
 
 ## 인벤토리 아이템 추가
 ## 슬롯 클릭 처리
