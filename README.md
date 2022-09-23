@@ -36,7 +36,7 @@ public class ItemRecipe
 {
     private string[,] recipe;       // 아이템 레시피
     private int create_quantity;    // 아이템 생성 개수
-    private int material_quantity;  // 필요한 총 재료 개수
+    private int material_quantity;  // 필요한 재료 개수
 
     public ItemRecipe()
     {
