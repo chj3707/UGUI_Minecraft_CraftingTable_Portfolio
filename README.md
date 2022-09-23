@@ -54,7 +54,7 @@ _**Recipe.csv**_
 <img src="/Image/RecipeCSV.png" height="60%" width="100%">
 
 + ### ItemDataBase
-    + _아이템, 아이템 레시피 정보 SET, GET_
+    + _아이템, 아이템 레시피 정보 [SET, GET]_
 
 ## 인벤토리 아이템 추가
 ## 슬롯 클릭 처리
