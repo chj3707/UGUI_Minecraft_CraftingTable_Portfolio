@@ -24,6 +24,7 @@ public class Item : ScriptableObject
     public bool is_material;                      // 재료 아이템인가?
 }
 ```
+
 <img src="/Image/ScriptableObject.PNG" height="60%" width="80%">
 
 ### 아이템 레시피 :: CSV
@@ -47,6 +48,8 @@ public class ItemRecipe
     // ...프로퍼티
 }
 ```
+
+<img src="/Image/RecipeCSV.png" height="60%" width="80%">
 
 ## 인벤토리 아이템 추가
 ## 슬롯 클릭 처리
