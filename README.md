@@ -12,7 +12,7 @@
 ### 아이템 :: ScriptableObject
 
 ScriptableObject 생성을 위한 클래스
-<img src="/Image/ItemClass.png" height="60%" width="80%">
+<img src="/Image/ItemClass.png" height="60%" width="100%">
 ```
 [CreateAssetMenu(fileName = "New Item", menuName = "New Item/Item")]
 public class Item : ScriptableObject
@@ -24,7 +24,7 @@ public class Item : ScriptableObject
     public bool is_material;                      // 재료 아이템인가?
 }
 ```
-<img src="/Image/ScriptableObject.PNG" height="100%" width="100%">
+<img src="/Image/ScriptableObject.PNG" height="60%" width="80%">
 
 ### 아이템 레시피 :: CSV
 
