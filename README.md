@@ -59,7 +59,7 @@ _**Recipe.csv**_
 ```c#
 public class ItemDataBase : Singleton_Mono<ItemDataBase>
 {
-    public Dictionary<string, Item> item_database = null;                      // 아이템 정보
+    public Dictionary<string, Item> item_database = null;                      // 아이템
     public List<Dictionary<string, ItemRecipe>> item_recipe_database = null;   // 아이템 레시피
     
     private void Awake()
