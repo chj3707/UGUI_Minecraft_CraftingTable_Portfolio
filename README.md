@@ -53,6 +53,8 @@ _**Recipe.csv**_
 
 <img src="/Image/RecipeCSV.png" height="60%" width="100%">
 
+### ItemDataBase : Singleton_Mono<ItemDataBase>
+
 ## 인벤토리 아이템 추가
 ## 슬롯 클릭 처리
 
