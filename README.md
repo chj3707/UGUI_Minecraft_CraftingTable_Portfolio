@@ -117,11 +117,9 @@ public class ItemDataBase : Singleton_Mono<ItemDataBase>
 <p align="center">
     <img src="/Image/Material Item Button.png" align="center" width="49%">
     <img src="/Image/Add Item to Inventory.png" align="center" width="49%">
-    <figcaption align="center">2개 이미지 띄우기</figcaption>
+    <figcaption align="center"></figcaption>
 </p>
 
-<img src="/Image/Material Item Button.png" height="300" width="500">
-<img src="/Image/Add Item to Inventory.png" height="300" width="500">
 
 ## 슬롯 클릭 처리
 
