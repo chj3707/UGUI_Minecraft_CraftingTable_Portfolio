@@ -134,43 +134,37 @@ public class ItemDataBase : Singleton_Mono<ItemDataBase>
 ```
 
 + #### **_인벤토리 아이템 추가 로직_**
-    + 1
-    + 2
-    + 3 
+    + _1. 빈 슬롯
+    + _2. 추가할 아이템과 같은 아이템 이고, 슬롯이 가득 차 있지 않음
+    + _3. 추가할 아이템의 남은 개수가 1개 이상 
 ```c#
     public static void insert_item_to_inventory(Item insert_item)
     {
         IEnumerator<Slot> enumerator = slot_list.GetEnumerator();
-        int insert_item_stack = insert_item.is_stackable ? MaxItemStack.stackable : MaxItemStack.non_stackable;
+        int insert_item_count = insert_item.is_stackable ? MaxItemStack.stackable : MaxItemStack.non_stackable;
 
         while (enumerator.MoveNext())
         {
             Slot current_slot = enumerator.Current;                         
-            Item current_item = current_slot.item_info.get_top_item_info();
-
-            /* 
-             *  재료 아이템 추가 조건
-             *  1.슬롯이 비어 있다.
-             *  2.추가할 아이템과 같은 아이템 이고, 아이템 스택이 가득 차 있지 않다.
-             */
+            Item current_item = current_slot.item_info.get_top_item_info(); 
 
             if (null == current_item)
             {
-                for (int i = 0; i < insert_item_stack; i++)
+                for (int i = 0; i < insert_item_count; i++)
                     current_slot.item_info.item_stack.Push(insert_item);
 
-                insert_item_stack = 0;
+                insert_item_count = 0;
             }
             else if(insert_item == current_item)
             {
-                while (false == current_slot.item_info.is_item_stack_full() && insert_item_stack > 0)
+                while (false == current_slot.item_info.is_item_stack_full() && insert_item_count > 0)
                 {
                     current_slot.item_info.item_stack.Push(insert_item);
-                    --insert_item_stack;
+                    --insert_item_count;
                 }
             }
-            current_slot.item_info.update_UI();        
-            if (0 == insert_item_stack) break;        
+            current_slot.item_info.update_UI();       
+            if (0 == insert_item_count) break;        
         }
     }
 ```
