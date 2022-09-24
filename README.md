@@ -121,7 +121,7 @@ public class ItemDataBase : Singleton_Mono<ItemDataBase>
     <figcaption align="center"></figcaption>
 </p>
 
-+ ### 아이템 버튼 클릭
++ #### **_아이템 버튼 클릭_**
 
 ```c#
     public void _On_AddItemBtnClick()
