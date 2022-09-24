@@ -114,6 +114,7 @@ public class ItemDataBase : Singleton_Mono<ItemDataBase>
 ```
 
 ## 인벤토리 아이템 추가
+
 <p align="center">
     <img src="/Image/Material Item Button.png" align="center" width="49%">
     <img src="/Image/Add Item to Inventory.png" align="center" width="49%">
