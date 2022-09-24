@@ -134,17 +134,19 @@ public class ItemDataBase : Singleton_Mono<ItemDataBase>
 ```
 
 + #### **_인벤토리 아이템 추가 로직_**
+    + 1
+    + 2
+    + 3 
 ```c#
     public static void insert_item_to_inventory(Item insert_item)
     {
         IEnumerator<Slot> enumerator = slot_list.GetEnumerator();
-        // 슬롯에 채울 아이템 개수
         int insert_item_stack = insert_item.is_stackable ? MaxItemStack.stackable : MaxItemStack.non_stackable;
 
         while (enumerator.MoveNext())
         {
-            Slot current_slot = enumerator.Current;                          // 현재 확인할 슬롯
-            Item current_item = current_slot.item_info.get_top_item_info();  // 현재 슬롯에 있는 아이템 정보
+            Slot current_slot = enumerator.Current;                         
+            Item current_item = current_slot.item_info.get_top_item_info();
 
             /* 
              *  재료 아이템 추가 조건
@@ -167,8 +169,8 @@ public class ItemDataBase : Singleton_Mono<ItemDataBase>
                     --insert_item_stack;
                 }
             }
-            current_slot.item_info.update_UI();        // 슬롯 UI 업데이트
-            if (0 == insert_item_stack) break;         // 추가할 아이템 개수가 0개 이면 종료
+            current_slot.item_info.update_UI();        
+            if (0 == insert_item_stack) break;        
         }
     }
 ```
