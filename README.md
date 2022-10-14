@@ -232,9 +232,13 @@ public class ItemInfo
 ## 슬롯 클릭 처리
 
 + #### **_인벤토리, 작업대 슬롯 클릭 IPointerClickHandler 사용_**
-    + _슬롯 클릭 상황 별 처리_
-        + _Drag_
-        + _Non_Drag_
+    +_슬롯 클릭 상황 별 처리_
+        +_Dragging_
+            +_빈 슬롯_
+            +_아이템 슬롯_
+        +_Non Dragging_
+            +_빈 슬롯_
+            +_아이템 슬롯_
     
 
 
