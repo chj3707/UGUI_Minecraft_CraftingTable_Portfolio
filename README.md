@@ -172,6 +172,11 @@ public class ItemDataBase : Singleton_Mono<ItemDataBase>
 
 ## 슬롯 내 아이템 정보
 
++ #### **_아이템 정보 클래스 사용처_**
+    + _1. 인벤토리 슬롯_
+    + _2. 완성 아이템 슬롯_
+    + _3. 드래그 아이템_
+    
 ```c#
 public class ItemInfo
 {
@@ -179,12 +184,7 @@ public class ItemInfo
     public Image item_image;                  
     public Text item_quantity_text;
 
-    public ItemInfo()
-    {
-        item_stack = new Stack<Item>();
-        item_image = null;
-        item_quantity_text = null;
-    }
+    public ItemInfo() { // ... 변수 초기화 }
 
     // 아이템 변경 내용 있을 때마다 호출하여 UI 업데이트
     public void update_UI()
