@@ -210,44 +210,22 @@ public class ItemInfo
     }
 
     // 현재 스택에 쌓인 아이템 개수 가져가기
-    public int get_item_stack_quantity()
-    {
-        return item_stack.Count;
-    }
+    public int get_item_stack_quantity() { // ... }
 
     // 아이템의 최대 스택 개수 가져가기
-    public int get_max_item_stack()
-    {
-        return get_top_item_info().is_stackable ? MaxItemStack.stackable : MaxItemStack.non_stackable;
-    }
+    public int get_max_item_stack() { // ... }
 
-    // 최상위에 있는 아이템 정보 가져가기
-    public Item get_top_item_info()
-    {
-        return true == is_item_stack_empty() ? null : item_stack.Peek();
-    }
+    // 아이템 정보 가져가기
+    public Item get_top_item_info() { // ... }
 
-    // 최상위에 있는 아이템 이름 가져가기
-    public string get_top_item_name()
-    {
-        return true == is_item_stack_empty() ? string.Empty : get_top_item_info().item_name;
-    }
+    // 아이템 이름 가져가기
+    public string get_top_item_name() { // ... }
 
-    // 아이템 스택이 가득 찼는가
-    public bool is_item_stack_full()
-    {
-        Item temp_item = get_top_item_info();
-        if (true == temp_item.is_stackable && item_stack.Count == MaxItemStack.stackable) return true;
-        else if (false == temp_item.is_stackable && item_stack.Count == MaxItemStack.non_stackable) return true;
-        return false;
-    }
+    // 아이템 스택이 가득 찼는가?
+    public bool is_item_stack_full() { // ... }
 
-    // 아이템 스택이 비어 있는가
-    public bool is_item_stack_empty()
-    {
-        if (0 == item_stack.Count) return true;
-        return false;
-    }
+    // 아이템 스택이 비어 있는가?
+    public bool is_item_stack_empty() { // ... }
 }
 ```
 
