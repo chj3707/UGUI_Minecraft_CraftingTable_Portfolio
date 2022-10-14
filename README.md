@@ -173,7 +173,7 @@ public class ItemDataBase : Singleton_Mono<ItemDataBase>
 ## 슬롯 내 아이템 정보
 
 + #### **_아이템 정보 클래스 사용처_**
-    + _1. 인벤토리 슬롯_
+    + _1. 인벤토리, 작업대 슬롯_
     + _2. 완성 아이템 슬롯_
     + _3. 드래그 아이템_
     
