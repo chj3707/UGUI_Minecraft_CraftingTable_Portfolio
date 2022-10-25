@@ -139,6 +139,7 @@ public class ItemDataBase : Singleton_Mono<ItemDataBase>
     + _2. 추가할 아이템과 같은 아이템 이고, 슬롯이 가득 차 있지 않음_
     + _3. 추가할 아이템의 남은 개수가 1개 이상_
 ```c#
+
     public static void insert_item_to_inventory(Item insert_item)
     {
         IEnumerator<Slot> enumerator = slot_list.GetEnumerator();
