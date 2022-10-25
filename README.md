@@ -285,6 +285,39 @@ public class ItemInfo
 
 #### **_아이템 드래그_**
 <img src="/Image/ItemDragging.gif" height="50%" width="50%">
+**_좌 클릭 :: 아이템 전부 드래그_**
+**_우 클릭 :: 아이템 절반 드래그_**
+
+```c#
+    private void items_drag(PointerEventData eventdata, EventManager eventmanager)
+    {
+        DraggingItem dragging_item = eventmanager.dragging_item_obj.GetComponent<DraggingItem>();
+        int pickup_item_count = 0;
+
+        switch (eventdata.pointerId)
+        {
+            // 좌 클릭 :: 슬롯에 있는 모든 아이템 드래그
+            case -1:
+                pickup_item_count = item_info.get_item_stack_quantity();
+                if (true == is_workbench_slot) --Workbench.workbench_material_quantity;
+                break;
+
+            // 우 클릭 :: 슬롯에 있는 아이템 절반 드래그
+            case -2:
+                pickup_item_count = Mathf.CeilToInt(item_info.get_item_stack_quantity() * 0.5f);
+                if (true == is_workbench_slot && 1 == item_info.get_item_stack_quantity()) --Workbench.workbench_material_quantity;
+                break;
+        }
+        eventmanager.is_dragging = true;
+
+        // 슬롯 아이템 스택 Pop(), 드래그 아이템 스택 Push() 반복
+        for (int i = 0; i < pickup_item_count; i++)
+            dragging_item.item_info.item_stack.Push(this.item_info.item_stack.Pop());
+
+        dragging_item.item_info.update_UI();
+        this.item_info.update_UI();
+    }
+```
 
 #### **_아이템 드랍_**
 
