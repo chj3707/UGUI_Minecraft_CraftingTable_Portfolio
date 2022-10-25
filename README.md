@@ -240,6 +240,48 @@ public class ItemInfo
             + [_빈 슬롯 :: 아이템 드랍_](#아이템-드랍)
             + [_아이템 슬롯 :: 아이템 드랍 or 스왑_](#아이템-드랍-&-스왑)
 
+``c#
+    public void OnPointerClick(PointerEventData eventdata)
+    {
+        EventManager eventmanager = EventManager.GetInstance;
+
+        switch (item_info.is_item_stack_empty())
+        {
+            case true:                            // 빈 슬롯 클릭
+                switch (eventmanager.is_dragging)
+                {
+                    case false:                   // 함수 종료
+                        return;
+                    
+                    case true:                    // Dragging :: 아이템 드랍
+                        items_drop(eventdata, eventmanager);
+                        break;
+                }
+                break;
+                
+            case false:                           // 아이템 슬롯 클릭
+                switch (eventmanager.is_dragging)
+                {
+                    case true:                    // Dragging :: 아이템 드랍 or 스왑
+                        items_swap_drop(eventdata, eventmanager);
+                        break;
+                        
+                    case false:                   // NonDragging :: 아이템 드래그
+                        items_drag(eventdata, eventmanager);    
+                        break;
+                }
+                break;
+        }
+
+        // 작업대 슬롯 클릭 :: 조합 실행
+        if (true == is_workbench_slot)
+        {
+            Workbench temp_workbench = this.GetComponentInParent<Workbench>();
+            temp_workbench.compare_workbench_and_recipes();
+        }
+    }
+``
+
 #### **_아이템 드래그_**
 
 
