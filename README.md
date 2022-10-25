@@ -239,7 +239,7 @@ public class ItemInfo
             + [_아이템 슬롯 :: 아이템 드래그_](#아이템-드래그)
         + _Dragging_
             + [_빈 슬롯 :: 아이템 드랍_](#아이템-드랍)
-            + [_아이템 슬롯 :: 아이템 드랍 or 스왑_](#아이템-드랍-&-스왑)
+            + [_아이템 슬롯 :: 아이템 드랍 or 스왑_](#아이템-드랍-or-스왑)
 
 ```c#
     public void OnPointerClick(PointerEventData eventdata)
@@ -289,5 +289,5 @@ public class ItemInfo
 #### **_아이템 드랍_**
 
 
-#### **_아이템 드랍 & 스왑_**
+#### **_아이템 드랍 or 스왑_**
 ## 제작대 아이템 조합
