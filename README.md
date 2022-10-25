@@ -317,7 +317,11 @@ public class ItemInfo
 ```
 
 ### **_아이템 드랍_**
-<img src="/Image/ItemDrop.gif" height="50%" width="50%">
+<p align="center">
+    <img src="/Image/ItemDrop.gif" align="center" width="49%">
+    <img src="/Image/ItemDrop2.gif" align="center" width="49%">
+    <figcaption align="center"></figcaption>
+</p>
 
 + **_좌 클릭_**
     + _빈 슬롯 :: 아이템 전부 드랍_
