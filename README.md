@@ -375,4 +375,25 @@ public class ItemInfo
 
 + **_같은 아이템 :: 아이템 드랍_**
 + **_다른 아이템 :: 아이템 스왑_**
+
+```c#
+    private void items_swap_drop(PointerEventData eventdata, EventManager eventmanager)
+    {
+        DraggingItem dragging_item = eventmanager.dragging_item_obj.GetComponent<DraggingItem>();
+
+        // 같은 아이템 :: 아이템 드랍
+        if (dragging_item.item_info.get_top_item_info() == this.item_info.get_top_item_info())
+        {
+            items_drop(eventdata, eventmanager); 
+            return;
+        }
+        else // 다른 아이템 :: 아이템 데이터 스왑
+        {
+            Core.swap<Stack<Item>>(ref dragging_item.item_info.item_stack, ref this.item_info.item_stack);
+            dragging_item.item_info.update_UI();
+            this.item_info.update_UI();
+        }
+    }
+```
+
 ## 제작대 아이템 조합
