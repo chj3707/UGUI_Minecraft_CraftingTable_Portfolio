@@ -284,7 +284,7 @@ public class ItemInfo
 ```
 
 #### **_아이템 드래그_**
-<img src="/Image/ItemDragging.gif" height="60%" width="100%">
+<img src="/Image/ItemDragging.gif" height="50%" width="50%">
 
 #### **_아이템 드랍_**
 
