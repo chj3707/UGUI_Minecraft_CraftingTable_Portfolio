@@ -297,21 +297,17 @@ public class ItemInfo
 
         switch (eventdata.pointerId)
         {
-            // 좌 클릭 :: 슬롯에 있는 모든 아이템 드래그
-            case -1:
+            case -1:                // 좌 클릭
                 pickup_item_count = item_info.get_item_stack_quantity();
-                if (true == is_workbench_slot) --Workbench.workbench_material_quantity;
                 break;
 
-            // 우 클릭 :: 슬롯에 있는 아이템 절반 드래그
-            case -2:
+            case -2:                // 우 클릭
                 pickup_item_count = Mathf.CeilToInt(item_info.get_item_stack_quantity() * 0.5f);
-                if (true == is_workbench_slot && 1 == item_info.get_item_stack_quantity()) --Workbench.workbench_material_quantity;
                 break;
         }
         eventmanager.is_dragging = true;
 
-        // 슬롯 아이템 스택 Pop(), 드래그 아이템 스택 Push() 반복
+        // 슬롯 아이템 Pop(), 드래그 아이템 Push()
         for (int i = 0; i < pickup_item_count; i++)
             dragging_item.item_info.item_stack.Push(this.item_info.item_stack.Pop());
 
