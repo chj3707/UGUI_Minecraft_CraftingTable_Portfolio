@@ -371,4 +371,8 @@ public class ItemInfo
 ```
 
 ### **_아이템 드랍 or 스왑_**
+<img src="/Image/ItemSwap.gif" height="50%" width="50%">
+
++ **_같은 아이템 :: 아이템 드랍_**
++ **_다른 클릭 :: 아이템 스왑_**
 ## 제작대 아이템 조합
