@@ -241,7 +241,7 @@ public class ItemInfo
             + [_빈 슬롯 :: 아이템 드랍_](#아이템-드랍)
             + [_아이템 슬롯 :: 아이템 드랍 or 스왑_](#아이템-드랍-&-스왑)
 
-``c#
+```c#
     public void OnPointerClick(PointerEventData eventdata)
     {
         EventManager eventmanager = EventManager.GetInstance;
@@ -281,7 +281,7 @@ public class ItemInfo
             temp_workbench.compare_workbench_and_recipes();
         }
     }
-``
+```
 
 #### **_아이템 드래그_**
 
