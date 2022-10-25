@@ -319,8 +319,52 @@ public class ItemInfo
 ### **_아이템 드랍_**
 <img src="/Image/ItemDrop.gif" height="50%" width="50%">
 
-+ **_좌 클릭 :: 아이템 전부 드랍_**
++ **_좌 클릭_**
+    + _빈 슬롯 :: 아이템 전부 드랍_
+    + _아이템 슬롯 :: 슬롯 아이템 최대 개수만큼 드랍_
 + **_우 클릭 :: 아이템 1개 드랍_**
+
+```c#
+    private void items_drop(PointerEventData eventdata, EventManager eventmanager)
+    {
+        DraggingItem dragging_item = eventmanager.dragging_item_obj.GetComponent<DraggingItem>();
+        int drop_item_count = 0;
+
+        switch (eventdata.pointerId)
+        {
+            case -1:                                              // 좌 클릭
+                if (true == this.item_info.is_item_stack_empty()) // 빈 슬롯
+                    drop_item_count = dragging_item.item_info.get_item_stack_quantity();
+                    
+                else                                              // 아이템 슬롯
+                {
+                    int dragging_item_count = dragging_item.item_info.get_item_stack_quantity();
+                    int required_item_count = this.item_info.get_max_item_stack() - this.item_info.get_item_stack_quantity();
+
+                    drop_item_count = dragging_item_count >= required_item_count ? required_item_count : dragging_item_count;
+                }
+                break;
+
+            case -2:                                              // 우 
+                if (true == this.item_info.is_item_stack_empty() ||
+                    this.item_info.get_item_stack_quantity() < this.item_info.get_max_item_stack())
+                {
+                    drop_item_count = 1;
+                }
+                break;
+        }
+
+        // 드래그 아이템 Pop(), 슬롯 아이템 Push()
+        for (int i = 0; i < drop_item_count; i++)
+            this.item_info.item_stack.Push(dragging_item.item_info.item_stack.Pop());
+
+        dragging_item.item_info.update_UI();
+        this.item_info.update_UI();
+
+        if (true == dragging_item.item_info.is_item_stack_empty())
+            eventmanager.is_dragging = false;
+    }
+```
 
 ### **_아이템 드랍 or 스왑_**
 ## 제작대 아이템 조합
