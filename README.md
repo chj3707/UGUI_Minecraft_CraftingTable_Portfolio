@@ -285,8 +285,8 @@ public class ItemInfo
 
 #### **_아이템 드래그_**
 <img src="/Image/ItemDragging.gif" height="50%" width="50%">
-**_좌 클릭 :: 아이템 전부 드래그_**
-**_우 클릭 :: 아이템 절반 드래그_**
++ **_좌 클릭 :: 아이템 전부 드래그_**
++ **_우 클릭 :: 아이템 절반 드래그_**
 
 ```c#
     private void items_drag(PointerEventData eventdata, EventManager eventmanager)
