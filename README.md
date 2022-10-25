@@ -251,7 +251,7 @@ public class ItemInfo
             case true:                            // 빈 슬롯 클릭
                 switch (eventmanager.is_dragging)
                 {
-                    case false:                   // 함수 종료
+                    case false:                   // NonDragging :: 함수 종료
                         return;
                     
                     case true:                    // Dragging :: 아이템 드랍
