@@ -345,7 +345,7 @@ public class ItemInfo
                 }
                 break;
 
-            case -2:                                              // 우 
+            case -2:                                              // 우 클릭
                 if (true == this.item_info.is_item_stack_empty() ||
                     this.item_info.get_item_stack_quantity() < this.item_info.get_max_item_stack())
                 {
