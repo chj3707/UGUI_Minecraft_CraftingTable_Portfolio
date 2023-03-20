@@ -398,3 +398,8 @@ public class ItemInfo
 ```
 
 ## 제작대 아이템 조합
+<p align="center">
+    <img src="/Image/Crafting1.gif" align="center" width="49%">
+    <img src="/Image/Crafting2.gif" align="center" width="49%">
+    <figcaption align="center"></figcaption>
+</p>
