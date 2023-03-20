@@ -404,6 +404,6 @@ public class ItemInfo
     <figcaption align="center"></figcaption>
 </p>
 
-### **_아이템 제작 플로우_**
++ ### **_아이템 제작 플로우_**
     + 1.
     + 2.
