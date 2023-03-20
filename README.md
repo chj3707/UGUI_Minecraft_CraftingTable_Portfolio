@@ -403,3 +403,7 @@ public class ItemInfo
     <img src="/Image/Crafting2.gif" align="center" width="49%">
     <figcaption align="center"></figcaption>
 </p>
+
+### **_아이템 제작 플로우_**
+    + 1.
+    + 2.
