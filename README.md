@@ -60,14 +60,17 @@ _**Recipe.csv**_
 ```c#
 public class ItemDataBase : Singleton_Mono<ItemDataBase>
 {
-    public Dictionary<string, Item> item_database = null;                      // 아이템 정보
-    public List<Dictionary<string, ItemRecipe>> item_recipe_database = null;   // 아이템 레시피
+    public Dictionary<string, Item> item_database;                      
+    public List<Dictionary<string, ItemRecipe>> item_recipe_database;   
     
     // ... Awake :: Initialize, Set info
-    
     // ... Initialize :: database 동적 할당
 
-    // 아이템 레시피 정보 가져가기
+    public Item get_item_data(string item_name)
+    {
+        return item_database[item_name];
+    }
+    
     public Dictionary<string, ItemRecipe> get_item_recipe_data(int material_quantity)
     {
         return item_recipe_database[material_quantity];
