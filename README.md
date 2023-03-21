@@ -412,7 +412,7 @@ public class ItemInfo
 
 ##### **_제작대와 레시피 탐색_**
 ```c#
-public void compare_workbench_with_recipes()
+    public void compare_workbench_with_recipes()
     {
         crafting_item_slot.reset_item_slot();
         var item_recipe_datas = ItemDataBase.GetInstance.get_item_recipe_data(workbench_material_quantity);
@@ -436,18 +436,12 @@ public void compare_workbench_with_recipes()
                         string prefix = split_item_name[0];
                         string suffix = split_item_name[1];
 
-                        if (crafting_item_recipe[i, j] != suffix)
-                        {
-                            is_craftable = false;
-                            break;
-                        }
-                        if (true == is_common_material(crafting_item_name, ECommonMaterial.none))
-                        {
-                            crafting_item_name = prefix + " " + crafting_item_name;
-                        }
+                        if (crafting_item_recipe[i, j] != suffix) { is_craftable = false; break; }
+                        if (true == is_common_material(crafting_item_name, ECommonMaterial.none)) { crafting_item_name = prefix + " " + crafting_item_name; }
                     }
                     else if (crafting_item_recipe[i, j] != material_item_name) { is_craftable = false; break; }
                 }
+
                 if (false == is_craftable) break;
             }
 
