@@ -455,7 +455,7 @@ public class ItemInfo
 ```c#
     private void item_crafting(KeyValuePair<string, ItemRecipe> item_recipe, string crafting_item_name)
     {
-        Item crafting_item = ItemDataBase.GetInstance.item_database[crafting_item_name];
+        Item crafting_item = ItemDataBase.GetInstance.get_item_data(crafting_item_name);
 
         for (int i = 0; i < item_recipe.Value.CreateQuantity; i++)
             crafting_item_slot.item_info.item_stack.Push(crafting_item);
