@@ -130,10 +130,11 @@ public class ItemDataBase : Singleton_Mono<ItemDataBase>
 ```c#
     public void _On_AddItemBtnClick()
     {
-        GameObject current_click_btn = EventSystem.current.currentSelectedGameObject;     // 현재 클릭한 게임 오브젝트
-        Item current_click_item = current_click_btn.GetComponent<Item_Scriptable>().item; // 클릭한 아이템 정보
+        GameObject current_click_btn = EventSystem.current.currentSelectedGameObject;     
+        Item current_click_item = current_click_btn.GetComponent<Item_Scriptable>().item; 
 
-        Inventory.insert_item_to_inventory(current_click_item);                           // 인벤토리에 클릭한 아이템 추가
+        // 인벤토리에 클릭한 아이템 추가
+        Inventory.insert_item_to_inventory(current_click_item);
     }
 ```
 
@@ -193,7 +194,6 @@ public class ItemInfo
     // 아이템 변경 내용 있을 때마다 호출하여 UI 업데이트
     public void update_UI()
     {
-        // 아이템 스택이 비었을 때
         if (true == is_item_stack_empty())
         {
             item_image.sprite = null;
@@ -207,28 +207,21 @@ public class ItemInfo
         Item current_item = get_top_item_info();
         item_image.enabled = true;
         item_image.sprite = current_item.item_sprite;
-        // 쌓을 수 있는 아이템, 아이템 스택이 1보다 크면 개수(Text) 표시
         item_quantity_text.enabled = current_item.is_stackable ? true : false;
         item_quantity_text.enabled = 1 == get_item_stack_quantity() ? false : true;
         item_quantity_text.text = item_stack.Count.ToString();
     }
 
-    // 현재 스택에 쌓인 아이템 개수 가져가기
-    public int get_item_stack_quantity() { // ... }
-
-    // 아이템의 최대 스택 개수 가져가기
-    public int get_max_item_stack() { // ... }
-
-    // 아이템 정보 가져가기
-    public Item get_top_item_info() { // ... }
-
-    // 아이템 이름 가져가기
-    public string get_top_item_name() { // ... }
-
-    // 아이템 스택이 가득 찼는가?
+    public int get_current_item_quantity() { // ... }
+    
+    public int get_item_max_quantity() { // ... }
+    
+    public Item get_item_info() { // ... }
+    
+    public string get_item_name() { // ... }
+    
     public bool is_item_stack_full() { // ... }
 
-    // 아이템 스택이 비어 있는가?
     public bool is_item_stack_empty() { // ... }
 }
 ```
