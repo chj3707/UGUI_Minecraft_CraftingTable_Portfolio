@@ -409,3 +409,48 @@ public class ItemInfo
     + _2. 제작대에 올라간 아이템 개수로 ItemDataBase에서 아이템 레시피 데이터 가져오기_
     + _3. 제작대와 레시피 비교 -> 제작 가능한 아이템 완성품 슬롯에 생성_
     + _4. 완성 아이템 클릭 -> 제작대 슬롯의 재료 아이템 소모_
+
+```c#
+public void compare_workbench_with_recipes()
+    {
+        crafting_item_slot.reset_item_slot();
+        var item_recipe_datas = ItemDataBase.GetInstance.get_item_recipe_data(workbench_material_quantity);
+
+        foreach (var item_recipe in item_recipe_datas)
+        {
+            string crafting_item_name = item_recipe.Key;
+            string[,] crafting_item_recipe = item_recipe.Value.Recipe;
+
+            bool is_craftable = true;
+
+            for (int i = 0; i < row; i++)
+            {
+                for (int j = 0; j < col; j++)
+                {
+                    string material_item_name = workbench[i, j].item_info.get_top_item_name();
+
+                    if (true == is_common_material(material_item_name, ECommonMaterial.none))
+                    {
+                        string[] split_item_name = material_item_name.Split(' ');
+                        string prefix = split_item_name[0];
+                        string suffix = split_item_name[1];
+
+                        if (crafting_item_recipe[i, j] != suffix)
+                        {
+                            is_craftable = false;
+                            break;
+                        }
+                        if (true == is_common_material(crafting_item_name, ECommonMaterial.none))
+                        {
+                            crafting_item_name = prefix + " " + crafting_item_name;
+                        }
+                    }
+                    else if (crafting_item_recipe[i, j] != material_item_name) { is_craftable = false; break; }
+                }
+                if (false == is_craftable) break;
+            }
+
+            if (true == is_craftable) { item_crafting(item_recipe, crafting_item_name); break; }
+        }
+    }
+```
