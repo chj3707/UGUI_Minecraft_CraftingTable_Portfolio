@@ -463,3 +463,32 @@ public class ItemInfo
         crafting_item_slot.item_info.update_UI();
     }
 ```
+
+##### **_재료 아이템 소모_**
+
+```c#
+    public void consume_material_item()
+    {
+        for (int i = 0; i < row; i++)
+        {
+            for (int j = 0; j < col; j++)
+            {
+                ItemInfo current_item_info = workbench[i, j].item_info;
+                if (null == current_item_info.get_item_info()) continue;
+
+                string material_item_name = search_nonconsume_material(current_item_info.get_item_name(), ENonConsumeMaterialItem.none);
+                if (String.Empty == material_item_name)
+                {
+                    current_item_info.item_stack.Pop();
+                    if (true == current_item_info.is_item_stack_empty()) --workbench_material_quantity;
+                }
+                else
+                {
+                    current_item_info.item_stack.Clear();
+                    current_item_info.item_stack.Push(ItemDataBase.GetInstance.get_item_data(material_item_name));
+                }
+                current_item_info.update_UI();
+            }
+        }
+    }
+```
