@@ -410,6 +410,7 @@ public class ItemInfo
     + _3. 제작대와 레시피 비교 -> 제작 가능한 아이템 완성품 슬롯에 생성_
     + _4. 완성 아이템 클릭 -> 제작대 슬롯의 재료 아이템 소모_
 
+### **_제작대, 레시피 탐색 함수_**
 ```c#
 public void compare_workbench_with_recipes()
     {
@@ -452,5 +453,17 @@ public void compare_workbench_with_recipes()
 
             if (true == is_craftable) { item_crafting(item_recipe, crafting_item_name); break; }
         }
+    }
+```
+### **_완성 아이템 제작 함수_**
+```c#
+    private void item_crafting(KeyValuePair<string, ItemRecipe> item_recipe, string crafting_item_name)
+    {
+        Item crafting_item = ItemDataBase.GetInstance.item_database[crafting_item_name];
+
+        for (int i = 0; i < item_recipe.Value.CreateQuantity; i++)
+            crafting_item_slot.item_info.item_stack.Push(crafting_item);
+
+        crafting_item_slot.item_info.update_UI();
     }
 ```
