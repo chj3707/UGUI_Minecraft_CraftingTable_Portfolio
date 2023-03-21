@@ -94,8 +94,8 @@ public class ItemDataBase : Singleton_Mono<ItemDataBase>
 
         for (int i = 0; i < recipe_count; i++)
         {
-            ItemRecipe curr_item_recipe = new ItemRecipe();  // 현재 아이템 레시피
-            string item_name = "";                           // 조합 아이템 이름
+            ItemRecipe curr_item_recipe = new ItemRecipe();  
+            string item_name = "";                           
 
             item_name = csv_data[i]["조합 아이템"] as string;
             curr_item_recipe.CreateQuantity = int.Parse(csv_data[i]["생성 개수"].ToString());
