@@ -405,12 +405,12 @@ public class ItemInfo
 </p>
 
 + ### **_아이템 제작 플로우_**
-    + _1. 제작대 슬롯에 아이템 추가 및 제거 or 제작된 완성 아이템 클릭 -> 제작대와 레시피 탐색 시작_
+    + _1. 제작대 슬롯에 아이템 추가 및 제거 or 제작된 완성 아이템 클릭 -> [제작대와 레시피 탐색 시작](제작대와-레시피-탐색)_
     + _2. 제작대에 올라간 아이템 개수로 ItemDataBase에서 아이템 레시피 데이터 가져오기_
-    + _3. 제작대와 레시피 비교 -> 제작 가능한 아이템 완성품 슬롯에 생성_
+    + _3. 제작대와 레시피 비교 -> [제작 가능한 아이템 완성품 슬롯에 생성](완성-아이템-제작)_
     + _4. 완성 아이템 클릭 -> 제작대 슬롯의 재료 아이템 소모_
 
-+ ##### **제작대, 레시피 탐색 함수**
+##### **제작대와 레시피 탐색 **
 ```c#
 public void compare_workbench_with_recipes()
     {
@@ -455,7 +455,7 @@ public void compare_workbench_with_recipes()
         }
     }
 ```
-+ ##### **완성 아이템 제작 함수**
+##### **완성 아이템 제작**
 ```c#
     private void item_crafting(KeyValuePair<string, ItemRecipe> item_recipe, string crafting_item_name)
     {
