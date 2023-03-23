@@ -142,6 +142,7 @@ public class ItemDataBase : Singleton_Mono<ItemDataBase>
     + _1. 빈 슬롯_
     + _2. 추가할 아이템과 같은 아이템 이고, 슬롯이 가득 차 있지 않음_
     + _3. 추가할 아이템의 남은 개수가 1개 이상_
+    + _-> 슬롯에 아이템 추가하고 다음 슬롯 확인_
 ```c#
 
     public static void insert_item_to_inventory(Item insert_item)
