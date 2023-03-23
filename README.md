@@ -442,7 +442,7 @@ public class ItemInfo
                 if (false == is_craftable) break;
             }
 
-            if (true == is_craftable) { item_crafting(item_recipe, crafting_item_name); break; }
+            if (true == is_craftable) { item_crafting(crafting_item_name, item_recipe.Value.CreateQuantity); break; }
         }
     }
 ```
@@ -450,11 +450,11 @@ public class ItemInfo
 ##### **_완성 아이템 제작_**
 
 ```c#
-    private void item_crafting(KeyValuePair<string, ItemRecipe> item_recipe, string crafting_item_name)
+    private void item_crafting(string crafting_item_name, int create_quantity)
     {
         Item crafting_item = ItemDataBase.GetInstance.get_item_data(crafting_item_name);
 
-        for (int i = 0; i < item_recipe.Value.CreateQuantity; i++)
+        for (int i = 0; i < create_quantity; i++)
             crafting_item_slot.item_info.item_stack.Push(crafting_item);
 
         crafting_item_slot.item_info.update_UI();
